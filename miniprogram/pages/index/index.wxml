@@ -1,7 +1,47 @@
 <!--index.wxml-->
 <view class="container">
+	<!--从这里开始是Hiko写的主页部分-->
+	<image class="title" src="../../images/Sysbtn/title.png" catchtap="hideatt"></image>
+	<view class="{{showAtt?'index_att_hide':'index_att_show'}}" id="attention" catchtap="hideatt">
+		<image class="{{showAtt?'dialog1_hide':'dialog1_show'}} " src="../../images/index/dialog.png"></image>
+		<text id="index_text">
+		{{'Hi~'+message}}
+		</text>
+	</view>
+  <view class="maincontain" >
+	<view class="itemcontainer" croll-y="true"  
+   style="height: 530rpx;" bindscrolltoupper="upper"
+    bindscrolltolower="lower" bindscroll="scroll"
+     scroll-into-view="{{toView}}"
+      scroll-top="{{scrollTop}}">
+		<view wx:for="{{todo}}" wx:key="index" id="{{'todo'+index}}" class="itemcontain">
+			<view class="leftcontain">
+				<text class="item_name"> {{item.item.name}}</text>
+				<view class="starcontain">
+					<image wx:for="{{item.item.important}}" class="star" src="../../images/Sysbtn/star1.png"></image>
+				</view>
 
-  <!-- 用户 openid -->
+			</view>
+			<view class="rightcontain">
+				<text class="item_group"> {{item.item.group}}</text>
+				<text class="item_ddl"> {{item.item.time}}</text>
+
+			</view>
+		</view>
+	</view>
+      <view class="btncontain">
+  <image class="indexbtn" id="addbtn" src="../../images/Sysbtn/addbtn.png"></image>
+  <image class="indexbtn"  id="calbtn" src="../../images/Sysbtn/calbtn.png"></image>
+  <image class="indexbtn"  id="clockbtn" src="../../images/Sysbtn/clockbtn.png"></image>
+  </view>
+  </view>
+  <view class="btncontain2">
+    <image class="indexbtn2" id="menubtn" src="../../images/Sysbtn/menu.png"></image>
+    <image class="indexbtn2" id="recordbtn" src="../../images/index/record_1.png"></image>
+    <image class="indexbtn2" id="suobtn" src="../../images/Sysbtn/clock_1.png"></image>
+  </view>
+	<!--从这里开始是默认创建样例的主页部分-->
+	<!-- 用户 openid 
   <view class="userinfo">
     <button 
       open-type="getUserInfo" 
@@ -12,10 +52,10 @@
     <view>
       <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
     </view>
-  </view>
+  </view>-->
 
 
-  <!-- 上传图片 -->
+	<!-- 上传图片 
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">
       <text>上传图片</text>
@@ -23,29 +63,29 @@
     <view class="uploader-container" wx:if="{{imgUrl}}">
       <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
     </view>
-  </view>
+  </view>-->
 
 
-  <!-- 操作数据库 -->
+	<!-- 操作数据库 
   <view class="uploader">
     <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
       <text>前端操作数据库</text>
     </navigator>
-  </view>
+  </view>-->
 
-  <!-- 新建云函数 -->
+	<!-- 新建云函数 
   <view class="uploader">
     <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
       <text>快速新建云函数</text>
     </navigator>
-  </view>
+  </view>-->
 
-  <!-- 云调用 -->
+	<!-- 云调用 
   <view class="uploader">
     <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
       <text>云调用</text>
     </navigator>
-  </view>
+  </view>-->
 
 
 </view>

@@ -7,7 +7,59 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    message: "欢迎来到Meow Todo~",
+    showAtt:true,
+    todo: [{
+      item: {
+        index:1,
+        name:'计网实验',
+        time:'2020/3/24',
+        group:'分组1',
+        important:6
+      },
+    }, {
+      item: {
+        index:2,
+        name:'计网实验',
+        time:'2020/3/24',
+        group:'分组2',
+        important:3
+      },
+      
+    }, {
+      item: {
+        index:3,
+        name:'实验',
+        time:'2020/3/24',
+        group:'分组2',
+        important:2
+      },
+      
+    }, {
+      item: {
+        index:4,
+        name:'验',
+        time:'2020/3/24',
+        group:'分组2',
+        important:5
+      },
+      
+    }, {
+      item: {
+        index:5,
+        name:'验',
+        time:'2020/3/24',
+        group:'分组2',
+        important:5
+      },
+      
+    }]
+  },
+  hideatt: function (e) {
+    this.setData({
+      showAtt:(!this.data.showAtt)
+    });
   },
 
   onLoad: function() {
@@ -116,5 +168,39 @@ Page({
       }
     })
   },
+  upper(e) {
+    console.log(e)
+  },
 
+  lower(e) {
+    console.log(e)
+  },
+
+  scroll(e) {
+    console.log(e)
+  },
+
+  scrollToTop() {
+    this.setAction({
+      scrollTop: 0
+    })
+  },
+
+  tap() {
+    for (let i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1],
+          scrollTop: (i + 1) * 200
+        })
+        break
+      }
+    }
+  },
+
+  tapMove() {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
+  }
 })
