@@ -1,9 +1,11 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container"       open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+     >
 	<!--从这里开始是Hiko写的主页部分-->
-	<image class="title" src="../../images/Sysbtn/title.png" catchtap="hideatt"></image>
+	<image class="title" src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/sysbtn/title.png" catchtap="hideatt"></image>
 	<view class="{{showAtt?'index_att_hide':'index_att_show'}}" id="attention" catchtap="hideatt">
-		<image class="{{showAtt?'dialog1_hide':'dialog1_show'}} " src="../../images/index/dialog.png"></image>
+		<image class="{{showAtt?'dialog1_hide':'dialog1_show'}} " src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/index/dialog.png"></image>
 		<text id="index_text">
 		{{'Hi~'+message}}
 		</text>
@@ -30,40 +32,19 @@
 		</view>
 	</view>
       <view class="btncontain">
-  <image class="indexbtn" id="addbtn" src="../../images/Sysbtn/addbtn.png"></image>
-  <image class="indexbtn"  id="calbtn" src="../../images/Sysbtn/calbtn.png"></image>
-  <image class="indexbtn"  id="clockbtn" src="../../images/Sysbtn/clockbtn.png"></image>
+  <image class="indexbtn" id="addbtn" src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/sysbtn/addbtn.png"></image>
+  <image class="indexbtn"  id="calbtn" src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/sysbtn/calbtn.png"></image>
+  <image class="indexbtn"  id="clockbtn" src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/sysbtn/clockbtn.png"></image>
   </view>
   </view>
   <view class="btncontain2">
-    <image class="indexbtn2" id="menubtn" src="../../images/Sysbtn/menu.png"></image>
-    <image class="indexbtn2" id="recordbtn" src="../../images/index/record_1.png"></image>
-    <image class="indexbtn2" id="suobtn" src="../../images/Sysbtn/clock_1.png"></image>
+    <image class="indexbtn2" id="menubtn" src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/sysbtn/menu.png"></image>
+    <image class="indexbtn2" id="recordbtn" src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/index/record_1.png"></image>
+    <image class="indexbtn2" id="suobtn" src="cloud://cloud-n4ti9.636c-cloud-n4ti9-1302235813/images/sysbtn/clock_1.png"></image>
   </view>
 	<!--从这里开始是默认创建样例的主页部分-->
-	<!-- 用户 openid 
-  <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-    ></button>
-    <view>
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
-    </view>
-  </view>-->
+	<!--用户 openid -->
 
-
-	<!-- 上传图片 
-  <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>-->
 
 
 	<!-- 操作数据库 

@@ -58,7 +58,7 @@ Page({
   },
   hideatt: function (e) {
     this.setData({
-      showAtt:(!this.data.showAtt)
+      showAtt:(!this.data.showAtt),
     });
   },
 
@@ -79,7 +79,9 @@ Page({
             success: res => {
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
+                userInfo: res.userInfo,
+                message:String(res.userInfo.nickName)+"欢迎回来",
+                showAtt:(!this.data.showAtt)
               })
             }
           })
